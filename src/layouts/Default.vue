@@ -21,12 +21,10 @@ Abstract: Top-level component which is shown when loading the site and at the ba
     <div class="navbar-style">
       <Navigation />
     </div>
-    <transition name="fade" appear>
-      <div class="contained-wrapper">
-        <!-- content -->
-        <slot />
-      </div>
-    </transition>
+    <div class="contained-wrapper">
+      <!-- content -->
+      <slot />
+    </div>
     <Footer />
   </div>
 </template>
@@ -60,6 +58,12 @@ body {
   padding: 0;
   line-height: 1.5;
   font-size: 16px;
+  background: #4d4d4d;
+  color: #efefef;
+}
+
+a:active {
+  color: #005eb8;
 }
 
 .contained-wrapper {
@@ -74,14 +78,6 @@ body {
 
 .navbar-style {
   border-bottom: 1px solid #2b2b2b;
-}
-
-/* Transition effect */
-.fade-enter-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter {
-  opacity: 0;
+  background: #3c3c3c;
 }
 </style>

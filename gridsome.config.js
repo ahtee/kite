@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'IQ',
+  siteName: 'Kite',
   siteDescription: 'Default site description',
   plugins: []
 };

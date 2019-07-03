@@ -79,7 +79,6 @@ export default {
   height: 70px;
   max-width: 760px;
   margin: 0px auto;
-  color: #2b2b2b;
 }
 
 .navbar-left {
@@ -91,20 +90,28 @@ nav {
   display: flex;
 }
 
-.navlink,
-.navlink:active {
+.navlink {
   margin: 0px 10px;
   text-decoration: none;
   color: #888888;
+  position: relative;
 }
 
 .navlink-active {
-  color: #005eb8;
-  border-bottom: 3px solid #005eb8;
-  text-decoration: none;
+  color: #00b5e2;
+}
+
+.navlink-active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00b5e2;
 }
 
 .navlink:hover {
-  color: #005eb8;
+  color: #00b5e2;
 }
 </style>
