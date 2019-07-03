@@ -9,11 +9,14 @@
 <template>
   <header class="navbar">
     <strong id="brand">
-      <g-link to="/">{{ $static.metaData.siteName }}</g-link>
+      <g-link to="/">
+        <img v-bind:src:="$static.metaData.siteLogo || 80.png" alt="Logo" />
+      </g-link>
     </strong>
     <nav v-for="LINK in LINKS" v-bind:key="LINK.id">
       <g-link class="navlink" v-bind:to="LINK.url">{{LINK.title}}</g-link>
     </nav>
+    <Button buttonTitle="Log In" v-if="loggedOut" />
     <Button buttonTitle="Sign Up" v-if="loggedOut" />
   </header>
 </template>
@@ -47,7 +50,7 @@ export default {
 <static-query>
 query {
   metaData {
-    siteName
+    siteLogo
   }
 }
 </static-query>

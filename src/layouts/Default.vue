@@ -18,11 +18,8 @@ Abstract: Top-level component which is shown when loading the site and at the ba
 
 <template>
   <div class="main-wrapper">
-    <div class="navbar-style" v-if="loggedOut">
+    <div class="navbar-style">
       <Navigation />
-    </div>
-    <div class="navbar-style" v-else>
-      <UserNavigation />
     </div>
     <div class="contained-wrapper">
       <slot />
@@ -40,12 +37,10 @@ query {
 
 <script>
 import Navigation from "../components/Navigation";
-import UserNavigation from "../components/UserNavigation";
 
 export default {
   components: {
-    Navigation,
-    UserNavigation
+    Navigation
   }
 };
 </script>
@@ -72,6 +67,6 @@ body {
 }
 
 .navbar-style {
-  border-bottom: 1px solid #345345;
+  border-bottom: 1px solid #2b2b2b;
 }
 </style>

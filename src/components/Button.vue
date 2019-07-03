@@ -24,8 +24,8 @@ export default {
 
 <style scoped>
 .btn {
-  border-color: #000000;
-  color: #000000;
+  border-color: #2b2b2b;
+  color: #2b2b2b;
   border-radius: 2px;
   cursor: pointer;
   box-sizing: border-box;
@@ -33,12 +33,12 @@ export default {
   font-weight: 400;
   letter-spacing: 0.035rem;
   line-height: 10px;
+  margin: 5px;
   padding: 10px 16px;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
-  transition: background-color 0.05s ease-in-out, border-color 0.05s ease-in-out;
   outline: none;
   white-space: nowrap;
 }
@@ -48,7 +48,6 @@ export default {
   background: 0 0;
   border: 1px solid #0061d5;
   color: #0061d5;
-  margin: 0;
 }
 </style>
 
