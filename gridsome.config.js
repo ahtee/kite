@@ -6,6 +6,6 @@
 
 module.exports = {
   siteName: 'IQ',
-  siteLogo: 'logo.png',
+  siteDescription: 'Default site description',
   plugins: []
 };

@@ -8,16 +8,22 @@
 
 <template>
   <header class="navbar">
-    <strong id="brand">
-      <g-link to="/">
-        <img v-bind:src:="$static.metaData.siteLogo || 80.png" alt="Logo" />
-      </g-link>
-    </strong>
-    <nav v-for="LINK in LINKS" v-bind:key="LINK.id">
-      <g-link class="navlink" v-bind:to="LINK.url">{{LINK.title}}</g-link>
-    </nav>
-    <Button buttonTitle="Log In" v-if="loggedOut" />
-    <Button buttonTitle="Sign Up" v-if="loggedOut" />
+    <div class="navbar-left">
+      <strong id="brand">
+        <g-link to="/">
+          <g-image alt="Example image" src="~/logo.png" width="40" />
+        </g-link>
+      </strong>
+      <nav v-for="LINK in LINKS" v-bind:key="LINK.id">
+        <g-link class="navlink" active-class="navlink-active" v-bind:to="LINK.url">{{LINK.title}}</g-link>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <section v-if="loggedOut">
+        <Button buttonTitle="Log In" buttonAction="onClick" />
+        <Button buttonTitle="Sign Up" />
+      </section>
+    </div>
   </header>
 </template>
 
@@ -39,47 +45,66 @@ export default {
         url: "/data"
       }
     ];
-    return { LINKS, loggedOut: true };
+    return {
+      LINKS,
+      loggedOut: true,
+      logo: "~/favicon.png"
+    };
   },
   components: {
     Button
+  },
+  methods: {
+    onClick() {
+      return {
+        loggedOut: !loggedOut
+      };
+    }
   }
 };
 </script>
-
-<static-query>
-query {
-  metaData {
-    siteLogo
-  }
-}
-</static-query>
 
 <style scoped>
 /* ID's */
 #brand {
   font-size: 1.5rem;
+  margin: 0px 20px 0px 0px;
 }
 
 /* Classes */
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
   max-width: 760px;
   margin: 0px auto;
+  color: #2b2b2b;
 }
 
-.nav:first-child {
-  margin-left: 90px;
+.navbar-left {
+  display: flex;
+  align-items: center;
 }
 
 nav {
   display: flex;
 }
 
-.navlink {
+.navlink,
+.navlink:active {
   margin: 0px 10px;
+  text-decoration: none;
+  color: #888888;
+}
+
+.navlink-active {
+  color: #005eb8;
+  border-bottom: 3px solid #005eb8;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  color: #005eb8;
 }
 </style>

@@ -7,15 +7,18 @@
  <!-- Author: Benjamin.otte -->
 
 <template>
-  <button class="btn" v-on:click="clicked">{{buttonTitle}}</button>
+  <button class="btn" @:click.prevent="buttonAction">
+    <slot>{{buttonTitle}}</slot>
+  </button>
 </template>
 
 <script>
 export default {
-  props: { buttonTitle: String },
-  methods: {
-    clicked(e) {
-      e.preventDefault();
+  props: {
+    buttonTitle: String,
+    buttonAction: {
+      type: Function,
+      required: true
     }
   }
 };

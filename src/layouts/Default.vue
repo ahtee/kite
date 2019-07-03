@@ -21,9 +21,13 @@ Abstract: Top-level component which is shown when loading the site and at the ba
     <div class="navbar-style">
       <Navigation />
     </div>
-    <div class="contained-wrapper">
-      <slot />
-    </div>
+    <transition name="fade" appear>
+      <div class="contained-wrapper">
+        <!-- content -->
+        <slot />
+      </div>
+    </transition>
+    <Footer />
   </div>
 </template>
 
@@ -37,10 +41,12 @@ query {
 
 <script>
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    Footer
   }
 };
 </script>
@@ -68,5 +74,14 @@ body {
 
 .navbar-style {
   border-bottom: 1px solid #2b2b2b;
+}
+
+/* Transition effect */
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>

@@ -19,3 +19,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+All code in this repo is licensed under the MIT License. Any content stored in AWS S3 
+or any other static file storage solutions are considered proprietary information
+and does not fall under the MIT License under any circumstances. I do not take ownership
+of any lost, deleted, copied, or redistributed files.
