@@ -1,15 +1,32 @@
+
+<!-- Copyright (c) -->
+
+<!-- This source code is licensed under the <License here> found in the root directory of this project. -->
+
+<!-- File name: Default.vue -->
+
+<!--
+Abstract: Top-level component which is shown when loading the site and at the baseURI.
+   The view will change based on what is defined by each route.
+   The toolbar and footer will always be displayed and does not need to be put onto every page layout.
+   Instead, the route will load the components for each page.
+   Pages are defined in ./src/pages.
+   -->
+
+ <!-- Author: Benjamin.otte -->
+
+
 <template>
-  <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metaData.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
-      </nav>
-    </header>
-    <slot/>
+  <div class="main-wrapper">
+    <div class="navbar-style" v-if="loggedOut">
+      <Navigation />
+    </div>
+    <div class="navbar-style" v-else>
+      <UserNavigation />
+    </div>
+    <div class="contained-wrapper">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -21,30 +38,40 @@ query {
 }
 </static-query>
 
+<script>
+import Navigation from "../components/Navigation";
+import UserNavigation from "../components/UserNavigation";
+
+export default {
+  components: {
+    Navigation,
+    UserNavigation
+  }
+};
+</script>
+
+
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
+  font-size: 16px;
 }
 
-.layout {
+.contained-wrapper {
   max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+  margin: 50px auto 0px auto;
+  padding: 0px 10px;
 }
 
 .nav__link {
   margin-left: 20px;
+}
+
+.navbar-style {
+  border-bottom: 1px solid #345345;
 }
 </style>
