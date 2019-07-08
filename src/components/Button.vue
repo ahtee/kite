@@ -19,7 +19,8 @@ export default {
     buttonAction: {
       type: Function,
       required: true
-    }
+    },
+    buttonTheme: String
   }
 };
 </script>
@@ -44,13 +45,6 @@ export default {
   text-shadow: none;
   outline: none;
   white-space: nowrap;
-}
-
-.btn:active,
-.btn:hover {
-  background: 0 0;
-  border: 1px solid #0061d5;
-  color: #0061d5;
 }
 </style>
 

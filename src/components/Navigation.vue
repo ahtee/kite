@@ -22,6 +22,7 @@
       <section v-if="loggedOut">
         <Button buttonTitle="Log In" buttonAction="onClick" />
         <Button buttonTitle="Sign Up" />
+        <Button buttonTitle="Change Theme" />
       </section>
     </div>
   </header>

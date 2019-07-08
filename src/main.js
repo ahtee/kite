@@ -4,8 +4,9 @@
 // Populating the <head> can be found here https://gridsome.org/docs/head
 
 import DefaultLayout from '~/layouts/Default.vue';
+import store from './store';
 
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout);
+  Vue.component('Layout', DefaultLayout, store);
 }

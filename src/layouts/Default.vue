@@ -40,11 +40,18 @@ query {
 <script>
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
     Navigation,
     Footer
+  },
+  methods: {
+    ...mapMutations(["setThemeColor"])
+  },
+  computed: {
+    ...mapGetters(["#ffffff"])
   }
 };
 </script>
@@ -62,7 +69,9 @@ body {
   color: #efefef;
 }
 
-a:active {
+a:active,
+a:focus,
+a {
   color: #005eb8;
 }
 
