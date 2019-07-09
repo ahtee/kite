@@ -8,7 +8,7 @@
 
 <template>
   <button class="btn" @:click.prevent="buttonAction">
-    <slot>{{buttonTitle}}</slot>
+    <slot></slot>
   </button>
 </template>
 
