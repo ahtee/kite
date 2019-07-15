@@ -20,17 +20,16 @@
     </div>
     <div class="navbar-right">
       <section v-if="loggedOut">
-        <Button buttonAction="onClick">Log In</Button>
+        <g-link>Log In</g-link>
         <Button>Sign Up</Button>
-        <Button buttonAction="setThemeColor($event)">Change Theme</Button>
       </section>
+      <Button buttonAction="setThemeColor($event)">Change Theme</Button>
     </div>
   </header>
 </template>
 
 <script>
 import Button from "./Button";
-import { mapMutations } from "vuex";
 
 export default {
   name: "Navigation",
@@ -49,8 +48,7 @@ export default {
     ];
     return {
       LINKS,
-      loggedOut: true,
-      logo: "~/favicon.png"
+      loggedOut: true
     };
   },
   components: {
@@ -61,8 +59,7 @@ export default {
       return {
         loggedOut: !loggedOut
       };
-    },
-    ...mapMutations(["setThemeColor"])
+    }
   }
 };
 </script>
@@ -87,6 +84,10 @@ export default {
 .navbar-left {
   display: flex;
   align-items: center;
+}
+
+.navbar-right {
+  display: flex;
 }
 
 nav {

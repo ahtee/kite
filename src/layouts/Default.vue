@@ -23,7 +23,7 @@ Abstract: Top-level component which is shown when loading the site and at the ba
     </div>
     <div class="contained-wrapper">
       <!-- content -->
-      <slot />
+      <slot></slot>
     </div>
     <Footer />
   </div>
@@ -40,18 +40,11 @@ query {
 <script>
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import { mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
     Navigation,
     Footer
-  },
-  methods: {
-    ...mapMutations(["setThemeColor"])
-  },
-  computed: {
-    ...mapGetters(["#ffffff"])
   }
 };
 </script>
@@ -65,8 +58,8 @@ body {
   padding: 0;
   line-height: 1.5;
   font-size: 16px;
-  background: #4d4d4d;
-  color: #efefef;
+  background: #1a1a1a;
+  color: #dfdfdf;
 }
 
 a:active,
@@ -87,6 +80,6 @@ a {
 
 .navbar-style {
   border-bottom: 1px solid #2b2b2b;
-  background: #3c3c3c;
+  background: #2c2c2c;
 }
 </style>

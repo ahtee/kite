@@ -7,13 +7,14 @@
  <!-- Author: Benjamin.otte -->
 
 <template>
-  <button class="btn" @:click.prevent="buttonAction">
-    <slot></slot>
+  <button id="btn" @:click.prevent="buttonAction">
+    <slot>Submit</slot>
   </button>
 </template>
 
 <script>
 export default {
+  name: "button",
   props: {
     buttonTitle: String,
     buttonAction: {
@@ -27,7 +28,7 @@ export default {
 
 
 <style scoped>
-.btn {
+#btn {
   border-color: #2b2b2b;
   color: #2b2b2b;
   border-radius: 2px;
