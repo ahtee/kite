@@ -14,6 +14,7 @@ devDependencies:
   eslint: 5.16.0
   eslint-plugin-prettier: 3.1.1_eslint@5.16.0+prettier@1.18.2
   eslint-plugin-vue: 5.2.3_eslint@5.16.0
+  husky: 3.0.9
   lint-staged: 9.4.2
   prettier: 1.18.2
   vue-template-compiler: 2.6.10
@@ -2176,6 +2177,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-vsGdkwSCDpWmP80ncATX7iea5DWQemg1UgCW5J8tqjU3lYw4FBYuj89J0CTVomA7BEfvSZd84GmHko+MxFQU2A==
+  /ci-info/2.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
   /cipher-base/1.0.4:
     dependencies:
       inherits: 2.0.4
@@ -3978,6 +3983,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
+  /get-stdin/7.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-zRKcywvrXlXsA0v0i9Io4KDRaAw7+a1ZpjRwl9Wox8PFlVCCHra7E9c4kqXCoCM9nR5tBkaTTZRBoCm60bFqTQ==
   /get-stream/3.0.0:
     dev: true
     engines:
@@ -4410,6 +4421,26 @@ packages:
       node: '>=8.12.0'
     resolution:
       integrity: sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
+  /husky/3.0.9:
+    dependencies:
+      chalk: 2.4.2
+      ci-info: 2.0.0
+      cosmiconfig: 5.2.1
+      execa: 1.0.0
+      get-stdin: 7.0.0
+      opencollective-postinstall: 2.0.2
+      pkg-dir: 4.2.0
+      please-upgrade-node: 3.2.0
+      read-pkg: 5.2.0
+      run-node: 1.0.0
+      slash: 3.0.0
+    dev: true
+    engines:
+      node: '>=8.6.0'
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-Yolhupm7le2/MqC1VYLk/cNmYxsSsqKkTyBhzQHhPK1jFnC89mmmNVuGtLNabjDI6Aj8UNIr0KpRNuBkiC4+sg==
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -6049,6 +6080,11 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-IFenVPgF70fSm1keSd2iDBIDIBZkroLeuffXq+wKTzTJlBpesFWojV9lb8mzOfaAzM1sr7HQHuO0vtV0zYekGg==
+  /opencollective-postinstall/2.0.2:
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
   /opener/1.5.1:
     dev: true
     hasBin: true
@@ -7383,6 +7419,13 @@ packages:
       node: '>=0.12.0'
     resolution:
       integrity: sha1-A3GrSuC91yDUFm19/aZP96RFpsA=
+  /run-node/1.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-kc120TBlQ3mih1LSzdAJXo4xn/GWS2ec0l3S+syHDXP9uRr0JAT8Qd3mdMuyjqCzeZktgP3try92cEgf9Nks8A==
   /run-parallel/1.1.9:
     dev: true
     resolution:
@@ -9097,6 +9140,7 @@ specifiers:
   eslint: ^5.16.0
   eslint-plugin-prettier: ^3.1.1
   eslint-plugin-vue: ^5.0.0
+  husky: ^3.0.9
   lint-staged: ^9.4.2
   prettier: ^1.18.2
   register-service-worker: ^1.6.2
